@@ -7,9 +7,9 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
+	r.GET("/*any", func(c *gin.Context) {
 		ip := c.Request.RemoteAddr
-		fmt.Printf("IP: %s", ip)
+		fmt.Printf("IP: %s\n", ip)
 		c.String(200, "IP: %s", ip)
 	})
 	r.Run(":9000")
